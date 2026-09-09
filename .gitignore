@@ -1,0 +1,43 @@
+# Unity generated folders (case-insensitive folder names).
+[Uu]nity-client/[Ll]ibrary/
+[Uu]nity-client/[Tt]emp/
+[Uu]nity-client/[Oo]bj/
+[Uu]nity-client/[Bb]uild/
+[Uu]nity-client/[Bb]uilds/
+[Uu]nity-client/[Ll]ogs/
+[Uu]nity-client/[Uu]ser[Ss]ettings/
+[Uu]nity-client/[Mm]emoryCaptures/
+[Uu]nity-client/[Rr]ecordings/
+*.csproj
+*.sln
+*.suo
+*.user
+*.pidb
+*.booproj
+*.unityproj
+*.opendb
+*.VC.db
+.vs/
+.idea/
+.DS_Store
+# Credentials and generated development configuration.
+.env
+.env.*
+!.env.example
+!.env.test.example
+*.pem
+*.key
+*.p12
+*.keystore
+# Python and generated artifacts.
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+reports/
+dist/
+*.egg-info/
+*.log

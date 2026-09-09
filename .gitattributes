@@ -1,0 +1,10 @@
+* text=auto
+*.py text eol=lf
+*.sh text eol=lf
+*.sql text eol=lf
+*.md text eol=lf
+*.cs text eol=lf
+*.unity text eol=lf
+*.prefab text eol=lf
+*.meta text eol=lf
+# Enable Git LFS deliberately before adding large binary art; see docs/git-lfs.md.
