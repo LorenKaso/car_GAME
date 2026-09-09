@@ -59,6 +59,8 @@ packaging==26.3
     # via
     #   geoalchemy2
     #   pytest
+pglast==8.4
+    # via -r racing-platform/backend/requirements-dev.in
 pluggy==1.6.0
     # via pytest
 psycopg==3.3.5
