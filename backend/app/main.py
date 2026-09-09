@@ -46,7 +46,7 @@ def create_app(settings=None):
     async def domain_error(request, exc):
         headers = {"WWW-Authenticate": "Bearer"} if exc.status == 401 else {}
         if exc.status == 429:
-            headers["Retry-After"] = "60"
+            headers["Retry-After"] = str(exc.retry_after or 60)
         return JSONResponse({"error": exc.code}, status_code=exc.status, headers=headers)
 
     @app.exception_handler(RequestValidationError)

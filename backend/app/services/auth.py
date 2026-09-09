@@ -48,7 +48,15 @@ def register(db, data, settings):
                 updated_at=now,
             )
         )
-        db.add(PlayerState(user_id=user.id, coins=0, xp=0, curve_version=1, updated_at=now))
+        db.add(
+            PlayerState(
+                user_id=user.id,
+                coins=0,
+                xp=0,
+                curve_version=settings.default_curve_version,
+                updated_at=now,
+            )
+        )
         db.add(
             UserCar(
                 id=uuid4(),

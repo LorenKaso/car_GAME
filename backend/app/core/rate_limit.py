@@ -25,4 +25,6 @@ class RateLimiter:
                 {"key": digest, "window": window},
             ).scalar_one()
         if hits > limit:
-            raise DomainError(429, "rate_limit_exceeded")
+            raise DomainError(
+                429, "rate_limit_exceeded", max(1, window + seconds - int(time.time()))
+            )

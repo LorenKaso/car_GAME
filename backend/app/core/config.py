@@ -16,6 +16,7 @@ class Settings(BaseSettings):
     access_minutes: int = Field(default=10, ge=1, le=60)
     refresh_days: int = Field(default=7, ge=1, le=30)
     session_days: int = Field(default=30, ge=1, le=90)
+    default_curve_version: int = Field(default=1, ge=1)
     public_app_url: str = "http://localhost:8000"
     smtp_host: str = "localhost"
     smtp_port: int = 1025
@@ -34,6 +35,8 @@ class Settings(BaseSettings):
         Fernet(self.outbox_key.get_secret_value().encode())
         if len(self.rate_limit_key.get_secret_value()) < 32:
             raise ValueError("RATE_LIMIT_KEY must contain at least 32 random characters")
+        if self.smtp_username and self.smtp_password is None:
+            raise ValueError("SMTP_PASSWORD is required when SMTP_USERNAME is configured")
         if self.app_env == "production":
             if not self.public_app_url.startswith("https://") or not self.smtp_starttls:
                 raise ValueError("Production requires an HTTPS application URL and SMTP TLS")
